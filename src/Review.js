@@ -34,6 +34,15 @@ const Review = () => {
     });
   };
 
+// display review randomly
+const randomReview = () => {
+  let randomNumber = Math.floor(Math.random() * people.length);
+  if (randomNumber === index) {
+    randomNumber = randomNumber +1;
+  }
+  setIndex(checkNumber(randomNumber))
+}
+
 
   return (
     <article className='review'>
@@ -54,7 +63,7 @@ const Review = () => {
           <FaChevronRight/>
         </button>
       </div>
-      <button className='random-btn'>suprise me</button>
+      <button className='random-btn' onClick={randomReview}>suprise me</button>
     </article>
   );
 };
